@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ParserSR should parse game DTO 1`] = `
+Game {
+  "away": Team {
+    "id": "ba27615c-07df-41f0-864b-332575f744f2",
+    "players": {
+      "62f377a6-ff87-4784-9631-05c555c4b14a": Player {
+        "id": "62f377a6-ff87-4784-9631-05c555c4b14a",
+        "statistics": {
+          "rec": 2,
+          "recYards": 39,
+          "rushAttempts": 12,
+          "rushTds": 0,
+          "rushYdsGained": 73,
+        },
+      },
+      "e11a2815-8f31-44b0-8c37-64240bcbc059": Player {
+        "id": "e11a2815-8f31-44b0-8c37-64240bcbc059",
+        "statistics": {
+          "rec": null,
+          "recYards": null,
+          "rushAttempts": 14,
+          "rushTds": 1,
+          "rushYdsGained": 76,
+        },
+      },
+      "f94fb8a3-cd77-4064-bc65-447550b43622": Player {
+        "id": "f94fb8a3-cd77-4064-bc65-447550b43622",
+        "statistics": {
+          "rec": 8,
+          "recYards": 46,
+          "rushAttempts": null,
+          "rushTds": null,
+          "rushYdsGained": null,
+        },
+      },
+    },
+    "statistics": {
+      "rec": 239,
+      "recYards": 27,
+      "rushAttempts": 37,
+      "rushTds": 1,
+      "rushYdsGained": 97,
+    },
+  },
+  "home": Team {
+    "id": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    "players": {
+      "713daff7-86cc-4283-91a8-1579c3f58f59": Player {
+        "id": "713daff7-86cc-4283-91a8-1579c3f58f59",
+        "statistics": {
+          "rec": 8,
+          "recYards": 88,
+          "rushAttempts": null,
+          "rushTds": null,
+          "rushYdsGained": null,
+        },
+      },
+      "c90711f2-5c4e-4f2e-8635-0d3f2336f581": Player {
+        "id": "c90711f2-5c4e-4f2e-8635-0d3f2336f581",
+        "statistics": {
+          "rec": null,
+          "recYards": null,
+          "rushAttempts": 2,
+          "rushTds": 0,
+          "rushYdsGained": -9,
+        },
+      },
+      "e5b67a2e-e0f7-4646-a343-c9bd0ae447f0": Player {
+        "id": "e5b67a2e-e0f7-4646-a343-c9bd0ae447f0",
+        "statistics": {
+          "rec": 8,
+          "recYards": 41,
+          "rushAttempts": 10,
+          "rushTds": 0,
+          "rushYdsGained": -4,
+        },
+      },
+    },
+    "statistics": {
+      "rec": 257,
+      "recYards": 31,
+      "rushAttempts": 39,
+      "rushTds": 0,
+      "rushYdsGained": 78,
+    },
+  },
+  "id": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+  "statistics": {
+    "attendance": 62487,
+  },
+}
+`;
