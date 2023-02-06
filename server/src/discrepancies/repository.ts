@@ -31,7 +31,7 @@ export interface Discrepancy {
 export type Filters = Partial<Pick<Discrepancy, "subjectId" | "subjectType">>
 
 export interface DiscrepanciesRepository {
-    discrepancies: (filters: Filters) => Promise<Discrepancy[]>
+    discrepancies: (filters?: Filters) => Promise<Discrepancy[]>
     insert: (discrepancy: Discrepancy) => Promise<void>
 }
 
