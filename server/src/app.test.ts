@@ -78,7 +78,12 @@ describe('GET /discrepancies', () => {
       .then((res: Response) => {
         expect(res.body)
           .toEqual(expect.objectContaining({
-            message: "Invalid value for parameter 'subjectType'. Received 'INVALID', expected 'GAME' | 'TEAM' | 'PLAYER'."
+            errors: expect.arrayContaining([
+              expect.objectContaining({
+                param: 'subjectType',
+                value: 'INVALID'
+              })
+            ])
           }))
       })
   })
