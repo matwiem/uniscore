@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComparerDemo should find all discrepancies between game representations 1`] = `
+[
+  {
+    "eventMeta": {
+      "awayTeamId": "team2",
+      "gameId": "game1",
+      "homeTeamId": "team1",
+    },
+    "parentId": null,
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/attendance",
+        "value": 100,
+      },
+      "sourceValue": 10,
+    },
+    "subjectId": "game1",
+    "subjectType": "GAME",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "team2",
+      "gameId": "game1",
+      "homeTeamId": "team1",
+    },
+    "parentId": "game1",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rushYdsGained",
+        "value": 5,
+      },
+      "sourceValue": 50,
+    },
+    "subjectId": "team1",
+    "subjectType": "TEAM",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "team2",
+      "gameId": "game1",
+      "homeTeamId": "team1",
+    },
+    "parentId": "team1",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/recYards",
+        "value": 40,
+      },
+      "sourceValue": 0,
+    },
+    "subjectId": "player1",
+    "subjectType": "PLAYER",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "team2",
+      "gameId": "game1",
+      "homeTeamId": "team1",
+    },
+    "parentId": "game1",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rushYdsGained",
+        "value": 3,
+      },
+      "sourceValue": 34,
+    },
+    "subjectId": "team2",
+    "subjectType": "TEAM",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "team2",
+      "gameId": "game1",
+      "homeTeamId": "team1",
+    },
+    "parentId": "team2",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rushYdsGained",
+        "value": 8,
+      },
+      "sourceValue": 0,
+    },
+    "subjectId": "player1",
+    "subjectType": "PLAYER",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "team2",
+      "gameId": "game1",
+      "homeTeamId": "team1",
+    },
+    "parentId": "team2",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rec",
+        "value": 42,
+      },
+      "sourceValue": 432,
+    },
+    "subjectId": "player1",
+    "subjectType": "PLAYER",
+  },
+]
+`;

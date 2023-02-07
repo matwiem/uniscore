@@ -1,4 +1,5 @@
 import { GameExistsError } from '@src/games/errors'
+import { Comparable, Comparer } from '@src/games/comparer'
 
 export interface GamesRepository {
     game: (id: string) => Promise<Game | null>
@@ -7,7 +8,7 @@ export interface GamesRepository {
     insertMany: (games: Game[]) => Promise<void>
 }
 
-export class Game {
+export class Game implements Comparable{
     id: string
     sourceId: string
     statistics: GameStatistics
@@ -21,13 +22,17 @@ export class Game {
         this.home = home
         this.away = away
     }
+
+    accept (comparer: Comparer): void {
+        comparer.compareGame(this)
+    }
 }
 
 export interface GameStatistics {
     attendance: number
 }
 
-export class Team {
+export class Team implements Comparable {
     id: string
     statistics: TeamStatistics
     players: {[key: string]: Player}
@@ -36,6 +41,10 @@ export class Team {
         this.id = id
         this.statistics = statistics
         this.players = players
+    }
+
+    accept (comparer: Comparer): void {
+        comparer.compareTeam(this)
     }
 }
 
@@ -47,13 +56,17 @@ export interface TeamStatistics {
     recYards: number
 }
 
-export class Player {
+export class Player implements Comparable {
     id: string
     statistics: PlayerStatistics
 
     constructor(id: string, statistics: PlayerStatistics) {
         this.id = id
         this.statistics = statistics
+    }
+
+    accept (comparer: Comparer): void {
+        comparer.comparePlayer(this)
     }
 }
 
