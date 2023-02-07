@@ -11,11 +11,11 @@ export interface Discrepancy {
         awayTeamId: string
     }
     propertyChange: {
-        sourceValue: unknown
+        sourceValue: string | number
         change: {
             path: string
             op: 'replace'
-            value: unknown
+            value: string | number
         }
     }
 }
