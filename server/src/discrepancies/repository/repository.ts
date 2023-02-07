@@ -33,6 +33,7 @@ export type Filters = Partial<Pick<Discrepancy, "subjectId" | "subjectType">>
 export interface DiscrepanciesRepository {
     discrepancies: (filters?: Filters) => Promise<Discrepancy[]>
     insert: (discrepancy: Discrepancy) => Promise<void>
+    insertMany: (discrepancies: Discrepancy[]) => Promise<void>
 }
 
 export class DiscrepanciesRepositoryMemory implements DiscrepanciesRepository {
@@ -48,6 +49,13 @@ export class DiscrepanciesRepositoryMemory implements DiscrepanciesRepository {
 
     insert (discrepancy: Discrepancy): Promise<void> {
         this.discrepanciesStore.push(discrepancy)
+        return Promise.resolve(undefined)
+    }
+
+    async insertMany (discrepancies: Discrepancy[]): Promise<void> {
+        for (const discrepancy of discrepancies) {
+            await this.insert(discrepancy)
+        }
         return Promise.resolve(undefined)
     }
 

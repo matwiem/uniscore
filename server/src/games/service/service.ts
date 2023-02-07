@@ -2,6 +2,10 @@ import jsonfile from 'jsonfile'
 
 import { GamesRepository } from '@src/games/repository/repository'
 import { Parser } from '@src/games/parser/parser'
+import {
+    DiscrepanciesRepository
+} from '@src/discrepancies/repository/repository'
+import { Comparer } from '@src/games/comparer/comparer'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface GamesService {}
@@ -9,10 +13,25 @@ export interface GamesService {}
 export class GamesServiceDemo implements GamesService {
     private sourceGamesRepository: GamesRepository
     private targetGamesRepository: GamesRepository
+    private discrepanciesRepository: DiscrepanciesRepository
 
-    constructor (sourceGamesRepository: GamesRepository, targetGamesRepository: GamesRepository) {
+    constructor (sourceGamesRepository: GamesRepository, targetGamesRepository: GamesRepository, discrepanciesRepository: DiscrepanciesRepository) {
         this.sourceGamesRepository = sourceGamesRepository
         this.targetGamesRepository = targetGamesRepository
+        this.discrepanciesRepository = discrepanciesRepository
+    }
+
+    compareGames = async (comparer: Comparer): Promise<void> => {
+        const sourceGames = await this.sourceGamesRepository.games()
+        for (const sourceGame of sourceGames) {
+            comparer.setSourceGame(sourceGame)
+            const targetGame = await this.targetGamesRepository.game(sourceGame.id)
+            if (targetGame) {
+                targetGame.accept(comparer)
+            }
+            const discrepancies = comparer.getDiscrepancies()
+            await this.discrepanciesRepository.insertMany(discrepancies)
+        }
     }
 
     loadSourceFromFile = async (path: string, parser: Parser) => {

@@ -6,10 +6,18 @@ import {
 import { InvalidFilterError } from '../errors'
 
 describe('DiscrepanciesRepositoryMemory', () => {
-  it('should insert and store a discrepancies', async () => {
+  it('should insert a discrepancy', async () => {
     const repository = await createMockRepositoryMemory()
     const discrepancies = await repository.discrepancies()
     expect(discrepancies).toHaveLength(mockDiscrepancies.length)
+  })
+
+  it(`should insertMany discrepancies`, async () => {
+    const repository = new DiscrepanciesRepositoryMemory()
+    await repository.insertMany(mockDiscrepancies)
+    const discrepancies = await repository.discrepancies()
+    expect(discrepancies)
+        .toEqual(mockDiscrepancies)
   })
 
   it(`should apply 'subjectType' filtering`, async () => {

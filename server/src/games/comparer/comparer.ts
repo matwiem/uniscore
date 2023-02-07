@@ -12,6 +12,8 @@ export interface Comparer {
     compareGame: (game: Game) => void
     compareTeam: (team: Team) => void
     comparePlayer: (player: Player) => void
+    setSourceGame: (game: Game) => void
+    getDiscrepancies: () => Discrepancy[]
 }
 
 export interface Comparable {

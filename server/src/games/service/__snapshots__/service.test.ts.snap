@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GamesServiceDemo should find discrepancies between source and target games repositories and insert them into discrepancies repository 1`] = `
+[
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": null,
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/attendance",
+        "value": 33876,
+      },
+      "sourceValue": 62487,
+    },
+    "subjectId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+    "subjectType": "GAME",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rec",
+        "value": 31,
+      },
+      "sourceValue": 257,
+    },
+    "subjectId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    "subjectType": "TEAM",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/recYards",
+        "value": 257,
+      },
+      "sourceValue": 31,
+    },
+    "subjectId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    "subjectType": "TEAM",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rushYdsGained",
+        "value": 90,
+      },
+      "sourceValue": 78,
+    },
+    "subjectId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    "subjectType": "TEAM",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rec",
+        "value": 1,
+      },
+      "sourceValue": 8,
+    },
+    "subjectId": "e5b67a2e-e0f7-4646-a343-c9bd0ae447f0",
+    "subjectType": "PLAYER",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/recYards",
+        "value": 4,
+      },
+      "sourceValue": 41,
+    },
+    "subjectId": "e5b67a2e-e0f7-4646-a343-c9bd0ae447f0",
+    "subjectType": "PLAYER",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rushYdsGained",
+        "value": -15,
+      },
+      "sourceValue": -9,
+    },
+    "subjectId": "c90711f2-5c4e-4f2e-8635-0d3f2336f581",
+    "subjectType": "PLAYER",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/recYards",
+        "value": 92,
+      },
+      "sourceValue": 88,
+    },
+    "subjectId": "713daff7-86cc-4283-91a8-1579c3f58f59",
+    "subjectType": "PLAYER",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rec",
+        "value": 27,
+      },
+      "sourceValue": 239,
+    },
+    "subjectId": "ba27615c-07df-41f0-864b-332575f744f2",
+    "subjectType": "TEAM",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/recYards",
+        "value": 230,
+      },
+      "sourceValue": 27,
+    },
+    "subjectId": "ba27615c-07df-41f0-864b-332575f744f2",
+    "subjectType": "TEAM",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rushYdsGained",
+        "value": 105,
+      },
+      "sourceValue": 97,
+    },
+    "subjectId": "ba27615c-07df-41f0-864b-332575f744f2",
+    "subjectType": "TEAM",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "ba27615c-07df-41f0-864b-332575f744f2",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rushYdsGained",
+        "value": 73,
+      },
+      "sourceValue": 76,
+    },
+    "subjectId": "e11a2815-8f31-44b0-8c37-64240bcbc059",
+    "subjectType": "PLAYER",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "ba27615c-07df-41f0-864b-332575f744f2",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rushTds",
+        "value": 2,
+      },
+      "sourceValue": 1,
+    },
+    "subjectId": "e11a2815-8f31-44b0-8c37-64240bcbc059",
+    "subjectType": "PLAYER",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "ba27615c-07df-41f0-864b-332575f744f2",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/recYards",
+        "value": 47,
+      },
+      "sourceValue": 46,
+    },
+    "subjectId": "f94fb8a3-cd77-4064-bc65-447550b43622",
+    "subjectType": "PLAYER",
+  },
+  {
+    "eventMeta": {
+      "awayTeamId": "ba27615c-07df-41f0-864b-332575f744f2",
+      "gameId": "15adf794-5630-4dc4-b0e7-f8d437b585b1",
+      "homeTeamId": "344e408b-846e-44ac-b491-7802ab0f7af0",
+    },
+    "parentId": "ba27615c-07df-41f0-864b-332575f744f2",
+    "propertyChange": {
+      "change": {
+        "op": "replace",
+        "path": "/statistics/rec",
+        "value": 9,
+      },
+      "sourceValue": 8,
+    },
+    "subjectId": "f94fb8a3-cd77-4064-bc65-447550b43622",
+    "subjectType": "PLAYER",
+  },
+]
+`;
