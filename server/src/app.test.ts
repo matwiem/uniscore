@@ -4,6 +4,20 @@ import {
   mockDiscrepancies,
   mockDiscrepancyGame, mockDiscrepancyPlayer, mockDiscrepancyTeam,
 } from './discrepancies/repository/repository.mock'
+import { GamesRepositoryMemory } from './games/repository/repository'
+import {
+    DiscrepanciesRepositoryMemory
+} from './discrepancies/repository/repository'
+import { GamesServiceDemo } from './games/service/service'
+import { ParserSR } from './games/parser/parser.sr'
+import { ParserExternal } from './games/parser/parser.external'
+import { gameDtoSr } from './games/parser/parser.sr.mock'
+import { gameDtoExternal } from './games/parser/parser.external.mock'
+import { ComparerDemo } from './games/comparer/comparer'
+import { DiscrepanciesServiceDemo } from './discrepancies/service/service'
+import { makeHandler } from './discrepancies/handler'
+import { makeMux } from './discrepancies/mux'
+import { makeApp } from './app'
 
 const request = require("supertest")
 
@@ -110,4 +124,36 @@ describe('GET /discrepancies', () => {
           .toEqual([])
       })
   })
+})
+
+describe(`Server`, () => {
+    it(`should work e2e`, async () => {
+        const repositorySr = new GamesRepositoryMemory()
+        const repositoryExternal = new GamesRepositoryMemory()
+        const discrepanciesRepository = new DiscrepanciesRepositoryMemory()
+
+        const gamesService = new GamesServiceDemo(repositorySr, repositoryExternal, discrepanciesRepository)
+        const discrepanciesService = new DiscrepanciesServiceDemo(discrepanciesRepository)
+
+        const parserSr = new ParserSR()
+        const parserExternal = new ParserExternal()
+
+        await gamesService.loadSourceFromCode(gameDtoSr, parserSr)
+        await gamesService.loadTargetFromCode(gameDtoExternal, parserExternal)
+
+        const comparer = new ComparerDemo()
+        await gamesService.compareGames(comparer)
+
+        const discrepanciesHandler = makeHandler(discrepanciesService)
+        const discrepancyMux = makeMux(discrepanciesHandler)
+        const app = makeApp(discrepancyMux)
+
+        return request(app)
+            .get('/discrepancies')
+            .expect('Content-Type', /json/)
+            .then((res: Response) => {
+                expect(res.body)
+                    .toHaveLength(15)
+            })
+    })
 })

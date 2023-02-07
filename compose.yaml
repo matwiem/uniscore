@@ -8,12 +8,15 @@ services:
     command: npm run dev
     environment:
       - NODE_ENV=development
+      - SOURCE_FILE=/datafiles/sr.json
+      - TARGET_FILE=/datafiles/external.json
     ports:
       - 80:80
       - 9229:9229
       - 9230:9230
     volumes:
       - ./server:/code
+      - ./datafiles:/datafiles
   client:
     build:
       context: client
