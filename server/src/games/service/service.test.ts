@@ -1,9 +1,9 @@
-import { GamesRepositoryMemory } from './repository'
+import { GamesRepositoryMemory } from '../repository/repository'
 import { GamesServiceDemo } from './service'
-import { ParserSR } from './parser.sr'
-import { ParserExternal } from './parser.external'
-import { gameDtoSr } from './parser.sr.mock'
-import { gameDtoExternal } from './parser.external.mock'
+import { ParserSR } from '../parser/parser.sr'
+import { ParserExternal } from '../parser/parser.external'
+import { gameDtoSr } from '../parser/parser.sr.mock'
+import { gameDtoExternal } from '../parser/parser.external.mock'
 
 describe(`GamesServiceDemo`, () => {
     it(`should parse game DTOs and store them in a repository`, async () => {

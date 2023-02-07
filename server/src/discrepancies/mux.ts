@@ -2,7 +2,7 @@ import express, { Router } from 'express'
 import { query } from 'express-validator'
 
 import { DiscrepanciesHandler, QueryParam } from '@src/discrepancies/handler'
-import { ALL_DISCREPANCY_SUBJECTS } from '@src/discrepancies/repository'
+import { ALL_DISCREPANCY_SUBJECTS } from '@src/discrepancies/repository/repository'
 
 export const makeMux = (handler: DiscrepanciesHandler): Router => {
     const mux = express.Router()

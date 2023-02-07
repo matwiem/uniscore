@@ -3,7 +3,7 @@ import {
     GamesRepositoryMemory,
     Player,
     Team,
-} from '@src/games/repository'
+} from '@src/games/repository/repository'
 
 export const mockGameSr = new Game(
     'game1',

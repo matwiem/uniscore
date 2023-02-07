@@ -1,7 +1,7 @@
 import {
     DiscrepanciesRepositoryMemory,
     Discrepancy,
-} from '@src/discrepancies/repository'
+} from '@src/discrepancies/repository/repository'
 
 export const mockDiscrepancyGame: Discrepancy = {
     subjectId: 'game1',

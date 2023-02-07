@@ -1,5 +1,5 @@
 import { GameExistsError } from '@src/games/errors'
-import { Comparable, Comparer } from '@src/games/comparer'
+import { Comparable, Comparer } from '@src/games/comparer/comparer'
 
 export interface GamesRepository {
     game: (id: string) => Promise<Game | null>

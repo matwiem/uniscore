@@ -1,5 +1,5 @@
-import { Parser } from '@src/games/parser'
-import { Game, Player, Team } from '@src/games/repository'
+import { Parser } from '@src/games/parser/parser'
+import { Game, Player, Team } from '@src/games/repository/repository'
 import { InvalidDTOFormat } from '@src/games/errors'
 
 interface RushingPlayerSR {

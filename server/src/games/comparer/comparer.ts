@@ -1,11 +1,11 @@
 import { compare, getValueByPointer } from 'fast-json-patch'
 
-import { Game, Player, Team } from '@src/games/repository'
+import { Game, Player, Team } from '@src/games/repository/repository'
 import {
     Discrepancy,
     DiscrepancySubject, EventMeta,
     NodeID,
-} from '@src/discrepancies/repository'
+} from '@src/discrepancies/repository/repository'
 import { InvalidStateError } from '@src/games/errors'
 
 export interface Comparer {

@@ -4,7 +4,7 @@ import {
     mockGameSr2,
 } from './repository.mock'
 import { GamesRepositoryMemory } from './repository'
-import { GameExistsError } from './errors'
+import { GameExistsError } from '../errors'
 
 describe(`GameRepositoryMemory`, () => {
     it(`should insert a game`, async () => {

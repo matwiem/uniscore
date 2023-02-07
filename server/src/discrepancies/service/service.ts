@@ -1,7 +1,7 @@
 import {
     Filters as RepositoryFilters,
     Discrepancy, DiscrepanciesRepository,
-} from '@src/discrepancies/repository'
+} from '@src/discrepancies/repository/repository'
 
 export type Filters = RepositoryFilters
 

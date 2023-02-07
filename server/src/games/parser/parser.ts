@@ -1,4 +1,4 @@
-import { Game } from '@src/games/repository'
+import { Game } from '@src/games/repository/repository'
 
 export interface Parser {
     parse: (data: unknown) => Game

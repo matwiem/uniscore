@@ -3,7 +3,7 @@ import { createMockApp } from './app.mock'
 import {
   mockDiscrepancies,
   mockDiscrepancyGame, mockDiscrepancyPlayer, mockDiscrepancyTeam,
-} from './discrepancies/repository.mock'
+} from './discrepancies/repository/repository.mock'
 
 const request = require("supertest")
 

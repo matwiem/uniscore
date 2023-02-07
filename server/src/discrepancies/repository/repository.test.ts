@@ -3,7 +3,7 @@ import {
   createMockRepositoryMemory,
   mockDiscrepancies, mockDiscrepancyGame,
 } from './repository.mock'
-import { InvalidFilterError } from './errors'
+import { InvalidFilterError } from '../errors'
 
 describe('DiscrepanciesRepositoryMemory', () => {
   it('should insert and store a discrepancies', async () => {
