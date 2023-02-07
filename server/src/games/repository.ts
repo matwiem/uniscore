@@ -6,12 +6,14 @@ export interface GamesRepository {
 
 export class Game {
     id: string
+    sourceId: string
     statistics: GameStatistics
     home: Team
     away: Team
 
-    constructor(id: string, statistics: GameStatistics, home: Team, away: Team) {
+    constructor(id: string, sourceId: string, statistics: GameStatistics, home: Team, away: Team) {
         this.id = id
+        this.sourceId = sourceId
         this.statistics = statistics
         this.home = home
         this.away = away

@@ -6,7 +6,8 @@ import {
 } from '@src/games/repository'
 
 export const mockGameSr = new Game(
-    "game1",
+    'game1',
+    'sr',
     {attendance: 100},
     new Team(
         'team1',
@@ -50,7 +51,8 @@ export const mockGameSr = new Game(
         })
 )
 export const mockGameExternal = new Game(
-    "game1",
+    'game1',
+    'external',
     {attendance: 100},
     new Team(
         'team1',

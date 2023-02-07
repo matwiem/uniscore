@@ -82,6 +82,7 @@ export class ParserExternal implements Parser {
         const {id, home, away, attendance} = gameDto.game
         return new Game(
             id,
+            gameDto.sourceId,
             {
                 attendance,
             },
