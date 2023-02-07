@@ -59,6 +59,7 @@ export class ParserSR implements Parser {
         const away = this.parseTeamSr(gameDto.statistics.away)
         return new Game(
             gameDto.game.id,
+            gameDto.sourceId,
             {
                 attendance: gameDto.game.attendance,
             },
