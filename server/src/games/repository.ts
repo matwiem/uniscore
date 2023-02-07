@@ -66,7 +66,7 @@ export interface PlayerStatistics {
 }
 
 export class GamesRepositoryMemory implements GamesRepository {
-    gamesStore: {[key: string]: Game} = {}
+    private gamesStore: {[key: string]: Game} = {}
 
     game (id: string): Promise<Game | null> {
         return Promise.resolve(this.gamesStore[id] || null)
