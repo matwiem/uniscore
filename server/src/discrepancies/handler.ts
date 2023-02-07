@@ -26,6 +26,7 @@ export const makeHandler = (service: DiscrepanciesService): DiscrepanciesHandler
                 const errors = validationResult(req)
                 if (!errors.isEmpty()) {
                     res.status(400).json({errors: errors.array()})
+                    return
                 }
                 const filters = req.query
                 res.json(await service.discrepancies(filters))
