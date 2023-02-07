@@ -1,7 +1,10 @@
+import { GameExistsError } from '@src/games/errors'
+
 export interface GamesRepository {
     game: (id: string) => Promise<Game | null>
     games: () => Promise<Game[]>
     insert: (game: Game) => Promise<void>
+    insertMany: (games: Game[]) => Promise<void>
 }
 
 export class Game {
@@ -74,7 +77,17 @@ export class GamesRepositoryMemory implements GamesRepository {
     }
 
     insert (game: Game): Promise<void> {
+        if (this.gamesStore[game.id]) {
+            throw new GameExistsError(game.id)
+        }
         this.gamesStore[game.id] = game
+        return Promise.resolve(undefined)
+    }
+
+    async insertMany (games: Game[]): Promise<void> {
+        for (const game of games) {
+            await this.insert(game)
+        }
         return Promise.resolve(undefined)
     }
 }
