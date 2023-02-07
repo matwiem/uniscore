@@ -9,3 +9,9 @@ export class GameExistsError extends Error {
         super(`Game Exists Error: entry for game with id=${gameId} already exists`)
     }
 }
+
+export class InvalidStateError extends Error {
+    constructor(reason: string) {
+        super(`Invalid State Error: ${reason}`)
+    }
+}

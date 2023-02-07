@@ -8,7 +8,7 @@ import {
 export const mockGameSr = new Game(
     'game1',
     'sr',
-    {attendance: 100},
+    {attendance: 10},
     new Team(
         'team1',
         {
@@ -16,7 +16,7 @@ export const mockGameSr = new Game(
             recYards: 2,
             rushAttempts: 3,
             rushTds: 4,
-            rushYdsGained: 5
+            rushYdsGained: 50
         },
         {
             'player1': new Player(
@@ -25,7 +25,7 @@ export const mockGameSr = new Game(
                     rec: 10,
                     rushAttempts: 20,
                     rushYdsGained: 30,
-                    recYards: 40,
+                    recYards: 0,
                     rushTds: 50
                 })
         }),
@@ -45,7 +45,7 @@ export const mockGameSr = new Game(
                     rushTds: 43,
                     recYards: 2,
                     rushAttempts: 90,
-                    rushYdsGained: 8
+                    rushYdsGained: 0
                 }
             )
         })
@@ -124,7 +124,7 @@ export const mockGameExternal = new Game(
     new Team(
         'team2', {
             rec: 12,
-            rushYdsGained: 34,
+            rushYdsGained: 3,
             rushTds: 534,
             rushAttempts: 87,
             recYards: 43,
@@ -133,7 +133,7 @@ export const mockGameExternal = new Game(
             'player1': new Player(
                 'player1',
                 {
-                    rec: 432,
+                    rec: 42,
                     rushTds: 43,
                     recYards: 2,
                     rushAttempts: 90,
