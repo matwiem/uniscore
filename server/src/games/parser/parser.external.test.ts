@@ -1,4 +1,4 @@
-import { InvalidDTOFormat } from './errors'
+import { InvalidDTOFormat } from '../errors'
 import { ParserExternal } from './parser.external'
 import { gameDtoExternal } from './parser.external.mock'
 

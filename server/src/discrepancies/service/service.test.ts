@@ -2,7 +2,7 @@ import { DiscrepanciesServiceDemo } from './service'
 import {
   createMockRepositoryMemory,
   mockDiscrepancies,
-} from './repository.mock'
+} from '../repository/repository.mock'
 
 describe('DiscrepanciesServiceDemo', () => {
   it(`should return discrepancies`, async () => {

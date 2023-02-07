@@ -1,7 +1,7 @@
 import jsonfile from 'jsonfile'
 
-import { GamesRepository } from '@src/games/repository'
-import { Parser } from '@src/games/parser'
+import { GamesRepository } from '@src/games/repository/repository'
+import { Parser } from '@src/games/parser/parser'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface GamesService {}

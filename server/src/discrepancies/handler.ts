@@ -4,7 +4,7 @@ import {
     Response,
 } from 'express'
 
-import { DiscrepanciesService, Filters } from '@src/discrepancies/service'
+import { DiscrepanciesService, Filters } from '@src/discrepancies/service/service'
 import { validationResult } from 'express-validator'
 
 type RequestQuery = Filters

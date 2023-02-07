@@ -1,5 +1,5 @@
 import { ParserSR } from './parser.sr'
-import { InvalidDTOFormat } from './errors'
+import { InvalidDTOFormat } from '../errors'
 import { gameDtoSr } from './parser.sr.mock'
 
 describe('ParserSR', () => {

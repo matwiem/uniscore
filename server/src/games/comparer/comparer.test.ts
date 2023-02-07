@@ -1,5 +1,5 @@
 import { ComparerDemo } from './comparer'
-import { mockGameExternal, mockGameSr } from './repository.mock'
+import { mockGameExternal, mockGameSr } from '../repository/repository.mock'
 
 describe(`ComparerDemo`, () => {
     it(`should find all discrepancies between game representations`, async () => {
