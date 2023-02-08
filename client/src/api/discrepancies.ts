@@ -24,12 +24,8 @@ export interface Discrepancy {
 export type Filters = Partial<Pick<Discrepancy, 'subjectId' | 'subjectType'>>
 
 export const getDiscrepancies = async (filters?: Filters) => {
-    const url = new URL(`${EnvVars.BaseURL}/discrepancies`)
-    if (filters != null) {
-        Object.entries(filters).forEach(([key, value]) => {
-            url.searchParams.set(key, value)
-        })
-    }
-    const response = await axios.get<Discrepancy[]>(url.toString())
+    const response = await axios.get<Discrepancy[]>(`${EnvVars.BaseURL}/discrepancies`, {
+        params: filters
+    })
     return response.data
 }
