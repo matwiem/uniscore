@@ -4,6 +4,7 @@ import {
 } from '@src/discrepancies/repository/repository'
 
 export const mockDiscrepancyGame: Discrepancy = {
+    id: 'disc1',
     subjectId: 'game1',
     subjectType: 'GAME',
     eventMeta: {
@@ -23,6 +24,7 @@ export const mockDiscrepancyGame: Discrepancy = {
 }
 
 export const mockDiscrepancyTeam: Discrepancy = {
+    id: 'disc2',
     subjectId: 'team1',
     subjectType: 'TEAM',
     eventMeta: {
@@ -42,6 +44,7 @@ export const mockDiscrepancyTeam: Discrepancy = {
 }
 
 export const mockDiscrepancyPlayer: Discrepancy = {
+    id: 'disc3',
     subjectId: 'player1',
     subjectType: 'PLAYER',
     eventMeta: {
