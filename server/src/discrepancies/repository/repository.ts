@@ -21,6 +21,7 @@ export interface PropertyChange {
 }
 
 export interface Discrepancy {
+    id: string
     subjectId: NodeID
     subjectType: DiscrepancySubject
     parentId: NodeID | null

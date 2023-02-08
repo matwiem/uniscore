@@ -1,4 +1,5 @@
 import { compare, getValueByPointer } from 'fast-json-patch'
+import { v4 as uuidv4 } from 'uuid'
 
 import { Game, Player, Team } from '@src/games/repository/repository'
 import {
@@ -107,6 +108,7 @@ export class ComparerDemo implements Comparer {
     private compare(subjectId: NodeID, subjectType: DiscrepancySubject, parentId: NodeID | null, eventMeta: EventMeta, c1: ComparableProperties, c2: ComparableProperties): Discrepancy[] {
         const operations = compare(c1, c2)
         return operations.map(op => ({
+            id: uuidv4() as string,
             subjectId,
             subjectType,
             parentId,

@@ -2,6 +2,7 @@ import axios from 'axios'
 import { EnvVars } from '../config'
 
 export interface Discrepancy {
+    id: string
     subjectId: string
     subjectType: 'GAME' | 'TEAM' | 'PLAYER'
     parentId: string | null
