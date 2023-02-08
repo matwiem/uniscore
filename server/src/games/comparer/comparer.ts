@@ -1,10 +1,8 @@
 import { compare, getValueByPointer } from 'fast-json-patch'
-import { v4 as uuidv4 } from 'uuid'
 
 import { Game, Player, Team } from '@src/games/repository/repository'
 import {
-    Discrepancy,
-    DiscrepancySubject, EventMeta,
+    DiscrepancySubject, EventMeta, NewDiscrepancy,
     NodeID,
 } from '@src/discrepancies/repository/repository'
 import { InvalidStateError } from '@src/games/errors'
@@ -14,7 +12,7 @@ export interface Comparer {
     compareTeam: (team: Team) => void
     comparePlayer: (player: Player) => void
     setSourceGame: (game: Game) => void
-    getDiscrepancies: () => Discrepancy[]
+    getDiscrepancies: () => NewDiscrepancy[]
 }
 
 export interface Comparable {
@@ -25,9 +23,9 @@ export class ComparerDemo implements Comparer {
     private sourceGame: Game | null = null
     private sourceTeam: Team | null = null
     private sourcePlayer: Player | null = null
-    private discrepancies: Discrepancy[] = []
+    private discrepancies: NewDiscrepancy[] = []
 
-    getDiscrepancies(): Discrepancy[] {
+    getDiscrepancies(): NewDiscrepancy[] {
         return this.discrepancies
     }
 
@@ -105,10 +103,9 @@ export class ComparerDemo implements Comparer {
         )]
     }
 
-    private compare(subjectId: NodeID, subjectType: DiscrepancySubject, parentId: NodeID | null, eventMeta: EventMeta, c1: ComparableProperties, c2: ComparableProperties): Discrepancy[] {
+    private compare(subjectId: NodeID, subjectType: DiscrepancySubject, parentId: NodeID | null, eventMeta: EventMeta, c1: ComparableProperties, c2: ComparableProperties): NewDiscrepancy[] {
         const operations = compare(c1, c2)
         return operations.map(op => ({
-            id: uuidv4() as string,
             subjectId,
             subjectType,
             parentId,

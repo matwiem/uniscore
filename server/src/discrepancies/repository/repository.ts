@@ -1,4 +1,5 @@
 import { Operation } from 'fast-json-patch'
+import { v4 as uuid } from 'uuid'
 import { InvalidFilterError } from '@src/discrepancies/errors'
 
 export type NodeID = string
@@ -29,12 +30,14 @@ export interface Discrepancy {
     propertyChange: PropertyChange
 }
 
+export type NewDiscrepancy = Omit<Discrepancy, 'id'>
+
 export type Filters = Partial<Pick<Discrepancy, "subjectId" | "subjectType">>
 
 export interface DiscrepanciesRepository {
     discrepancies: (filters?: Filters) => Promise<Discrepancy[]>
-    insert: (discrepancy: Discrepancy) => Promise<void>
-    insertMany: (discrepancies: Discrepancy[]) => Promise<void>
+    insert: (discrepancy: NewDiscrepancy) => Promise<void>
+    insertMany: (discrepancies: NewDiscrepancy[]) => Promise<void>
 }
 
 export class DiscrepanciesRepositoryMemory implements DiscrepanciesRepository {
@@ -48,12 +51,12 @@ export class DiscrepanciesRepositoryMemory implements DiscrepanciesRepository {
         return Promise.resolve([...this.discrepanciesStore])
     }
 
-    insert (discrepancy: Discrepancy): Promise<void> {
-        this.discrepanciesStore.push(discrepancy)
+    insert (discrepancy: NewDiscrepancy): Promise<void> {
+        this.discrepanciesStore.push({id: uuid(), ...discrepancy})
         return Promise.resolve(undefined)
     }
 
-    async insertMany (discrepancies: Discrepancy[]): Promise<void> {
+    async insertMany (discrepancies: NewDiscrepancy[]): Promise<void> {
         for (const discrepancy of discrepancies) {
             await this.insert(discrepancy)
         }
