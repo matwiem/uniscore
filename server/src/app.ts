@@ -1,5 +1,6 @@
 import morgan from "morgan"
 import express, { Router } from 'express'
+import cors from 'cors'
 
 import "express-async-errors"
 
@@ -8,6 +9,7 @@ import {EnvVars, NodeEnvs} from "@src/config"
 export const makeApp = (discrepanciesMux: Router) => {
     const app = express()
 
+    app.use(cors())
     app.use(express.json())
     app.use(express.urlencoded({extended: true}))
 
