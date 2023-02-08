@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react'
 import { CheckIcon, ViewOffIcon } from '@chakra-ui/icons'
 
-import { type Discrepancy } from '../../../api/discrepancies'
+import { type Discrepancy } from '../../api/discrepancies'
 
 interface DiscrepancyCardProps {
     discrepancy: Discrepancy

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 
 import { DiscrepanciesList } from './DiscrepanciesList'
-import { discrepanciesJSON } from '../../../api/discrepancies.mock'
+import { discrepanciesJSON } from '../../api/discrepancies.mock'
 
 test('renders \'no discrepancies \' when empty array given', () => {
     render(<DiscrepanciesList discrepancies={[]} />)
