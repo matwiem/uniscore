@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getUserErrorMessage should produce NOT_FOUND if a HTTP 404 was thrown 1`] = `
+Object {
+  "type": "NOT_FOUND",
+}
+`;
+
+exports[`getUserErrorMessage should produce SYSTEM_FAILURE if a HTTP 500 was thrown 1`] = `
+Object {
+  "type": "SYSTEM_FAILURE",
+}
+`;
