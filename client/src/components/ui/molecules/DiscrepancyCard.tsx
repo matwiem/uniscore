@@ -4,13 +4,13 @@ import {
     CardHeader,
     Heading,
     HStack,
-    Stack, Text
+    Stack, Stat, StatLabel, StatNumber, Text
 } from '@chakra-ui/react'
 import { CheckIcon, ViewOffIcon } from '@chakra-ui/icons'
 
-import { type Discrepancy } from '../../api/discrepancies'
+import { type Discrepancy } from '../../../api/discrepancies'
 
-interface DiscrepanciesListItemProps {
+interface DiscrepancyCardProps {
     discrepancy: Discrepancy
 }
 
@@ -18,17 +18,21 @@ type ChangeProps = Pick<Discrepancy, 'propertyChange'>
 
 const Change: React.FC<ChangeProps> = (props) => {
     const { change, sourceValue } = props.propertyChange
-    if (props.propertyChange.change.op === 'replace') {
-        return <>
-            <Text>property: {change.path}</Text>
-            <Text>change: {sourceValue} {'=>'} {change.value}</Text>
-        </>
+    if (change.op === 'replace') {
+        return (
+            <Stat>
+                <StatLabel>{change.path}</StatLabel>
+                <StatNumber>{sourceValue} → {change.value}</StatNumber>
+            </Stat>
+        )
     }
 
     return <Text>Not implemented.</Text>
 }
 
-export const DiscrepanciesListItem: React.FC<DiscrepanciesListItemProps> = (props) => {
+export const DiscrepancyCard: React.FC<DiscrepancyCardProps> = (props) => {
+    const { discrepancy } = props
+
     return <Card
         direction={{
             base: 'column',
@@ -41,7 +45,7 @@ export const DiscrepanciesListItem: React.FC<DiscrepanciesListItemProps> = (prop
         <Stack>
             <CardHeader>
                 <HStack>
-                    <Badge>{props.discrepancy.subjectType}</Badge>
+                    <Badge>{discrepancy.subjectType}</Badge>
                     <Heading size="sm">{props.discrepancy.subjectId}</Heading>
                 </HStack>
             </CardHeader>
@@ -50,7 +54,7 @@ export const DiscrepanciesListItem: React.FC<DiscrepanciesListItemProps> = (prop
             </CardBody>
 
             <CardFooter>
-                <Button aria-label='resolve-discrepancy' leftIcon={<CheckIcon />}>
+                <Button mr={3} aria-label='resolve-discrepancy' leftIcon={<CheckIcon />}>
                     Resolve
                 </Button>
                 <Button aria-label='ignore-discrepancy' leftIcon={<ViewOffIcon />}>
