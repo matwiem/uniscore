@@ -41,6 +41,7 @@ export const DiscrepancyCard: React.FC<DiscrepancyCardProps> = (props) => {
         overflow="hidden"
         variant="outline"
         width={'full'}
+        data-testid='discrepancy-card'
     >
         <Stack>
             <CardHeader>
