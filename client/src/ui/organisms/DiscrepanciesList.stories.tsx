@@ -1,7 +1,7 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
 import { DiscrepanciesList } from './DiscrepanciesList'
-import { discrepanciesJSON } from '../../../api/discrepancies.mock'
+import { discrepanciesJSON } from '../../api/discrepancies.mock'
 
 const componentMeta: ComponentMeta<typeof DiscrepanciesList> = {
     component: DiscrepanciesList

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 
-import { discrepanciesJSON } from '../../../api/discrepancies.mock'
+import { discrepanciesJSON } from '../../api/discrepancies.mock'
 import { DiscrepancyCard } from './DiscrepancyCard'
 
 const discrepancy = discrepanciesJSON[0]

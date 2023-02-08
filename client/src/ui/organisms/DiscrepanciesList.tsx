@@ -1,4 +1,4 @@
-import { type Discrepancy } from '../../../api/discrepancies'
+import { type Discrepancy } from '../../api/discrepancies'
 import { Center, Text, VStack } from '@chakra-ui/react'
 import { DiscrepancyCard } from '../molecules/DiscrepancyCard'
 
