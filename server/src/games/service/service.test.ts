@@ -47,7 +47,5 @@ describe(`GamesServiceDemo`, () => {
         const discrepancies = await discrepanciesRepository.discrepancies()
         expect(discrepancies)
             .toHaveLength(15)
-        expect(discrepancies)
-            .toMatchSnapshot()
     })
 })

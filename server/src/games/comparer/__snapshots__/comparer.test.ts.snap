@@ -8,7 +8,6 @@ exports[`ComparerDemo should find all discrepancies between game representations
       "gameId": "game1",
       "homeTeamId": "team1",
     },
-    "id": "d23c10c2-572e-4b1f-85e4-19c2632aebb9",
     "parentId": null,
     "propertyChange": {
       "change": {
@@ -27,7 +26,6 @@ exports[`ComparerDemo should find all discrepancies between game representations
       "gameId": "game1",
       "homeTeamId": "team1",
     },
-    "id": "898b75bb-297b-476b-b0b4-ceb48bbad928",
     "parentId": "game1",
     "propertyChange": {
       "change": {
@@ -46,7 +44,6 @@ exports[`ComparerDemo should find all discrepancies between game representations
       "gameId": "game1",
       "homeTeamId": "team1",
     },
-    "id": "94287468-6111-4623-8e3f-e72d602bdd88",
     "parentId": "team1",
     "propertyChange": {
       "change": {
@@ -65,7 +62,6 @@ exports[`ComparerDemo should find all discrepancies between game representations
       "gameId": "game1",
       "homeTeamId": "team1",
     },
-    "id": "9fac5280-deec-46e9-a442-7e922a10f74f",
     "parentId": "game1",
     "propertyChange": {
       "change": {
@@ -84,7 +80,6 @@ exports[`ComparerDemo should find all discrepancies between game representations
       "gameId": "game1",
       "homeTeamId": "team1",
     },
-    "id": "41be8835-2f7e-4b22-a856-023a7d5afefd",
     "parentId": "team2",
     "propertyChange": {
       "change": {
@@ -103,7 +98,6 @@ exports[`ComparerDemo should find all discrepancies between game representations
       "gameId": "game1",
       "homeTeamId": "team1",
     },
-    "id": "ddb89039-e380-4689-8fc8-9443664b7925",
     "parentId": "team2",
     "propertyChange": {
       "change": {
