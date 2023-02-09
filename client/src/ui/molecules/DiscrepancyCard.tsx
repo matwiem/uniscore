@@ -9,7 +9,7 @@ import {
 import { CheckIcon, ViewOffIcon } from '@chakra-ui/icons'
 
 import { type Discrepancy } from '../../api/discrepancies'
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 
 interface DiscrepancyCardProps {
     discrepancy: Discrepancy
@@ -33,7 +33,7 @@ const Change: React.FC<ChangeProps> = (props) => {
     return <Text>Not implemented.</Text>
 }
 
-export const DiscrepancyCard: React.FC<DiscrepancyCardProps> = (props) => {
+export const DiscrepancyCard: React.FC<DiscrepancyCardProps> = memo((props) => {
     const { discrepancy, onResolve, onIgnore } = props
 
     const handleResolve = useCallback(() => {
@@ -79,4 +79,4 @@ export const DiscrepancyCard: React.FC<DiscrepancyCardProps> = (props) => {
             </CardFooter>
         </Stack>
     </Card>
-}
+})

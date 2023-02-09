@@ -4,9 +4,11 @@ import { DiscrepancyCard } from '../molecules/DiscrepancyCard'
 
 interface DiscrepanciesListProps {
     discrepancies: Discrepancy[]
+    handleResolve: (discrepancy: Discrepancy) => void
+    handleIgnore: (discrepancy: Discrepancy) => void
 }
 export const DiscrepanciesList: React.FC<DiscrepanciesListProps> = (props) => {
-    const { discrepancies } = props
+    const { discrepancies, handleResolve, handleIgnore } = props
 
     if (discrepancies.length === 0) {
         return (
@@ -19,7 +21,12 @@ export const DiscrepanciesList: React.FC<DiscrepanciesListProps> = (props) => {
     return (
         <VStack>
             {discrepancies.map((discrepancy) =>
-                <DiscrepancyCard key={discrepancy.id} discrepancy={discrepancy} />
+                <DiscrepancyCard
+                    key={discrepancy.id}
+                    discrepancy={discrepancy}
+                    onResolve={handleResolve}
+                    onIgnore={handleIgnore}
+                />
             )}
         </VStack>
     )

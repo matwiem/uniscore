@@ -7,8 +7,10 @@ const componentMeta: ComponentMeta<typeof DiscrepanciesList> = {
     component: DiscrepanciesList
 }
 
-export const Empty: ComponentStory<typeof DiscrepanciesList> = () => <DiscrepanciesList discrepancies={[]} />
+const noop = () => undefined
 
-export const AllTypes: ComponentStory<typeof DiscrepanciesList> = () => <DiscrepanciesList discrepancies={discrepanciesJSON} />
+export const Empty: ComponentStory<typeof DiscrepanciesList> = () => <DiscrepanciesList discrepancies={[]} handleIgnore={noop} handleResolve={noop} />
+
+export const AllTypes: ComponentStory<typeof DiscrepanciesList> = () => <DiscrepanciesList discrepancies={discrepanciesJSON} handleIgnore={noop} handleResolve={noop} />
 
 export default componentMeta

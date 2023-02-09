@@ -1,8 +1,9 @@
 import { setupServer } from 'msw/node'
 import {
+    fireEvent,
     render,
     screen,
-    waitForElementToBeRemoved
+    waitForElementToBeRemoved, within
 } from '@testing-library/react'
 
 import { AllDiscrepancies } from './AllDiscrepancies'
@@ -37,8 +38,26 @@ describe('AllDiscrepancies page', () => {
 
         await waitForElementToBeRemoved(loader)
 
-        const entries = screen.getAllByTestId('discrepancy-card')
+        const discrepancies = screen.getAllByTestId('discrepancy-card')
 
-        expect(entries).toHaveLength(discrepanciesJSON.length)
+        expect(discrepancies).toHaveLength(discrepanciesJSON.length)
+    })
+
+    test('resolves first discrepancy', async () => {
+        render(
+            <AppProviders>
+                <AllDiscrepancies/>
+            </AppProviders>
+        )
+
+        const discrepancies = await screen.findAllByTestId('discrepancy-card')
+
+        const resolveButton = within(discrepancies[0]).getByText(/resolve/i)
+
+        fireEvent.click(resolveButton)
+
+        await waitForElementToBeRemoved(discrepancies[0])
+
+        await screen.findByText(/Successfully closed discrepancy/i)
     })
 })
