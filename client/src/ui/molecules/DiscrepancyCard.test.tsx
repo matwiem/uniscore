@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 
 import { discrepanciesJSON } from '../../api/discrepancies.mock'
 import { DiscrepancyCard } from './DiscrepancyCard'
@@ -43,4 +43,27 @@ test('renders action buttons', () => {
     const resolveButton = screen.getByText(/resolve/i)
 
     expect(resolveButton).toBeInTheDocument()
+})
+
+test('triggers \'onResolve\' when resolve button clicked', () => {
+    const onResolveMock = jest.fn()
+    render(<DiscrepancyCard discrepancy={discrepancy} onResolve={onResolveMock} />)
+
+    const resolveButton = screen.getByText(/resolve/i)
+
+    fireEvent.click(resolveButton)
+
+    expect(onResolveMock).toHaveBeenCalledTimes(1)
+    expect(onResolveMock.mock.calls[0][0]).toEqual(discrepancy)
+})
+test('triggers \'onIgnore\' when ignore button clicked', () => {
+    const onIgnoreMock = jest.fn()
+    render(<DiscrepancyCard discrepancy={discrepancy} onIgnore={onIgnoreMock} />)
+
+    const ignoreButton = screen.getByText(/ignore/i)
+
+    fireEvent.click(ignoreButton)
+
+    expect(onIgnoreMock).toHaveBeenCalledTimes(1)
+    expect(onIgnoreMock.mock.calls[0][0]).toEqual(discrepancy)
 })
