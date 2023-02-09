@@ -3,8 +3,10 @@ import { render, screen } from '@testing-library/react'
 import { DiscrepanciesList } from './DiscrepanciesList'
 import { discrepanciesJSON } from '../../api/discrepancies.mock'
 
+const noop = () => undefined
+
 test('renders \'no discrepancies \' when empty array given', () => {
-    render(<DiscrepanciesList discrepancies={[]} />)
+    render(<DiscrepanciesList discrepancies={[]} handleIgnore={noop} handleResolve={noop} />)
 
     const message = screen.getByText(/no discrepancies/i)
 
@@ -12,7 +14,7 @@ test('renders \'no discrepancies \' when empty array given', () => {
 })
 
 test('renders all discrepancies', () => {
-    render(<DiscrepanciesList discrepancies={discrepanciesJSON} />)
+    render(<DiscrepanciesList discrepancies={discrepanciesJSON} handleIgnore={noop} handleResolve={noop} />)
 
     const items = screen.getAllByTestId('discrepancy-card')
 

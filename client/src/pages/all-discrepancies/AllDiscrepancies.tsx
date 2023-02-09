@@ -1,16 +1,20 @@
-import { useQuery } from 'react-query'
-import { type Discrepancy, getDiscrepancies } from '../../api/discrepancies'
+import { type Discrepancy } from '../../api/discrepancies'
 import { Spinner } from '../../ui/molecules/Spinner'
 import { AllDiscrepanciesView } from './AllDiscrepanciesView'
+import { useDiscrepancies } from '../../utils/discrepancies/useDiscrepancies'
 
 export const AllDiscrepancies: React.FC<Record<string, never>> = () => {
-    const { isLoading, data } = useQuery('discrepancies', async () => await getDiscrepancies())
+    const { query, handleResolve, handleIgnore } = useDiscrepancies()
 
-    if (isLoading) {
+    if (query.isLoading) {
         return <Spinner />
     }
 
     return (
-        <AllDiscrepanciesView discrepancies={data as Discrepancy[]} />
+        <AllDiscrepanciesView
+            discrepancies={query.data as Discrepancy[]}
+            onResolve={handleResolve}
+            onIgnore={handleIgnore}
+        />
     )
 }

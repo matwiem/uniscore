@@ -7,6 +7,8 @@ const componentMeta: ComponentMeta<typeof AllDiscrepanciesView> = {
     component: AllDiscrepanciesView
 }
 
-export const AllDiscrepancies: ComponentStory<typeof AllDiscrepanciesView> = () => <AllDiscrepanciesView discrepancies={discrepanciesJSON} />
+const noop = () => undefined
+
+export const AllDiscrepancies: ComponentStory<typeof AllDiscrepanciesView> = () => <AllDiscrepanciesView discrepancies={discrepanciesJSON} onIgnore={noop} onResolve={noop} />
 
 export default componentMeta
