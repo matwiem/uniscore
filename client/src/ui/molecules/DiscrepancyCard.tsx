@@ -9,9 +9,12 @@ import {
 import { CheckIcon, ViewOffIcon } from '@chakra-ui/icons'
 
 import { type Discrepancy } from '../../api/discrepancies'
+import { useCallback } from 'react'
 
 interface DiscrepancyCardProps {
     discrepancy: Discrepancy
+    onResolve?: (discrepancy: Discrepancy) => void
+    onIgnore?: (discrepancy: Discrepancy) => void
 }
 
 type ChangeProps = Pick<Discrepancy, 'propertyChange'>
@@ -31,7 +34,19 @@ const Change: React.FC<ChangeProps> = (props) => {
 }
 
 export const DiscrepancyCard: React.FC<DiscrepancyCardProps> = (props) => {
-    const { discrepancy } = props
+    const { discrepancy, onResolve, onIgnore } = props
+
+    const handleResolve = useCallback(() => {
+        if (onResolve != null) {
+            onResolve(discrepancy)
+        }
+    }, [discrepancy, onResolve])
+
+    const handleIgnore = useCallback(() => {
+        if (onIgnore != null) {
+            onIgnore(discrepancy)
+        }
+    }, [discrepancy, onIgnore])
 
     return <Card
         direction={{
@@ -55,10 +70,10 @@ export const DiscrepancyCard: React.FC<DiscrepancyCardProps> = (props) => {
             </CardBody>
 
             <CardFooter>
-                <Button mr={3} aria-label='resolve-discrepancy' leftIcon={<CheckIcon />}>
+                <Button onClick={handleResolve} mr={3} aria-label='resolve-discrepancy' leftIcon={<CheckIcon />}>
                     Resolve
                 </Button>
-                <Button aria-label='ignore-discrepancy' leftIcon={<ViewOffIcon />}>
+                <Button onClick={handleIgnore} aria-label='ignore-discrepancy' leftIcon={<ViewOffIcon />}>
                     Ignore
                 </Button>
             </CardFooter>
