@@ -10,8 +10,8 @@ import { AllDiscrepancies } from './AllDiscrepancies'
 import {
     discrepanciesJSON,
     discrepanciesMockHandler
-} from '../../api/discrepancies.mock'
-import { AppProviders } from '../../AppProviders'
+} from '../api/discrepancies.mock'
+import { AppProviders } from '../AppProviders'
 
 const server = setupServer(...discrepanciesMockHandler)
 

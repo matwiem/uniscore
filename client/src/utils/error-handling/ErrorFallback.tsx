@@ -1,25 +1,28 @@
-import { Link, Center, Container, VStack, Button } from '@chakra-ui/react'
-import { Link as ReactLink } from 'react-router-dom'
+import { Center, Container, VStack, Button } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 import { ErrorMessage } from '../../ui/molecules/ErrorMessage'
 import { getUserErrorMessage } from './error-messages'
 
 interface ErrorFallbackProps {
     error: Error
+    resetErrorBoundary: (...args: unknown[]) => void
 }
 
 export const ErrorFallback: React.FC<ErrorFallbackProps> = (props) => {
-    const { error } = props
+    const { error, resetErrorBoundary } = props
+    const navigate = useNavigate()
 
     return (
         <Container>
             <Center>
                 <VStack>
                     <ErrorMessage message={getUserErrorMessage(error)} />
-                    <Link to='/' as={ReactLink} >
-                        <Button>
+                    <Button onClick={() => {
+                        resetErrorBoundary()
+                        navigate('/')
+                    }}>
                             Go home
-                        </Button>
-                    </Link>
+                    </Button>
                 </VStack>
             </Center>
         </Container>
