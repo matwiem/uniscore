@@ -4,8 +4,8 @@ import { DiscrepancyCard } from '../molecules/DiscrepancyCard'
 
 interface DiscrepanciesListProps {
     discrepancies: Discrepancy[]
-    handleResolve: (discrepancy: Discrepancy) => void
-    handleIgnore: (discrepancy: Discrepancy) => void
+    handleResolve?: (discrepancy: Discrepancy) => void
+    handleIgnore?: (discrepancy: Discrepancy) => void
 }
 export const DiscrepanciesList: React.FC<DiscrepanciesListProps> = (props) => {
     const { discrepancies, handleResolve, handleIgnore } = props
