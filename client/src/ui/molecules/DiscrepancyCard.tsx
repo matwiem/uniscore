@@ -10,6 +10,7 @@ import { CheckIcon, ViewOffIcon } from '@chakra-ui/icons'
 
 import { type Discrepancy } from '../../api/discrepancies'
 import { memo, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 
 interface DiscrepancyCardProps {
     discrepancy: Discrepancy
@@ -62,7 +63,9 @@ export const DiscrepancyCard: React.FC<DiscrepancyCardProps> = memo((props) => {
             <CardHeader>
                 <HStack>
                     <Badge>{discrepancy.subjectType}</Badge>
-                    <Heading size="sm">{props.discrepancy.subjectId}</Heading>
+                    <Link to={`/${discrepancy.subjectType.toLowerCase()}/${discrepancy.subjectId}`}>
+                        <Heading size="sm">{props.discrepancy.subjectId}</Heading>
+                    </Link>
                 </HStack>
             </CardHeader>
             <CardBody py={0}>
