@@ -2,11 +2,12 @@ import { fireEvent, render, screen } from '@testing-library/react'
 
 import { discrepanciesJSON } from '../../api/discrepancies.mock'
 import { DiscrepancyCard } from './DiscrepancyCard'
+import { MemoryRouter } from 'react-router-dom'
 
 const discrepancy = discrepanciesJSON[0]
 
 test('renders subject\'s ID', () => {
-    render(<DiscrepancyCard discrepancy={discrepancy} />)
+    render(<MemoryRouter><DiscrepancyCard discrepancy={discrepancy} /></MemoryRouter>)
 
     const id = screen.getByText(discrepancy.subjectId)
 
@@ -14,7 +15,7 @@ test('renders subject\'s ID', () => {
 })
 
 test('renders subject\'s type', () => {
-    render(<DiscrepancyCard discrepancy={discrepancy} />)
+    render(<MemoryRouter><DiscrepancyCard discrepancy={discrepancy} /></MemoryRouter>)
 
     const type = screen.getByText(discrepancy.subjectType)
 
@@ -22,7 +23,7 @@ test('renders subject\'s type', () => {
 })
 
 test('renders change', () => {
-    render(<DiscrepancyCard discrepancy={discrepancy} />)
+    render(<MemoryRouter><DiscrepancyCard discrepancy={discrepancy} /></MemoryRouter>)
 
     const path = screen.getByText(new RegExp(discrepancy.propertyChange.change.path))
 
@@ -34,7 +35,7 @@ test('renders change', () => {
 })
 
 test('renders action buttons', () => {
-    render(<DiscrepancyCard discrepancy={discrepancy} />)
+    render(<MemoryRouter><DiscrepancyCard discrepancy={discrepancy} /></MemoryRouter>)
 
     const ignoreButton = screen.getByText(/ignore/i)
 
@@ -47,7 +48,7 @@ test('renders action buttons', () => {
 
 test('triggers \'onResolve\' when resolve button clicked', () => {
     const onResolveMock = jest.fn()
-    render(<DiscrepancyCard discrepancy={discrepancy} onResolve={onResolveMock} />)
+    render(<MemoryRouter><DiscrepancyCard discrepancy={discrepancy} onResolve={onResolveMock} /></MemoryRouter>)
 
     const resolveButton = screen.getByText(/resolve/i)
 
@@ -58,7 +59,7 @@ test('triggers \'onResolve\' when resolve button clicked', () => {
 })
 test('triggers \'onIgnore\' when ignore button clicked', () => {
     const onIgnoreMock = jest.fn()
-    render(<DiscrepancyCard discrepancy={discrepancy} onIgnore={onIgnoreMock} />)
+    render(<MemoryRouter><DiscrepancyCard discrepancy={discrepancy} onIgnore={onIgnoreMock} /></MemoryRouter>)
 
     const ignoreButton = screen.getByText(/ignore/i)
 

@@ -7,7 +7,7 @@ import { type Discrepancy } from '../api/discrepancies'
 
 export const GameDiscrepancies: React.FC<Record<string, never>> = () => {
     const { gameId } = useParams()
-    const { query, handleResolve, handleIgnore } = useDiscrepancies({ subjectId: gameId, subjectType: 'dupa' as any })
+    const { query, handleResolve, handleIgnore } = useDiscrepancies({ subjectId: gameId })
 
     useEffect(() => {
         if (query.isError) {
